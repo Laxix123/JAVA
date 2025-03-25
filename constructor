@@ -1,0 +1,33 @@
+package com.mycompany.persona;
+
+import java.util.Scanner;
+
+public class Persona {
+    String nombre ;
+    int edad;
+    Persona(String nombre, int edad){
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    void mostrarInformacion(){
+        System.out.println(" Su nombre es : " + nombre);
+        System.out.println(" Su edad es : " + edad);
+    }
+    public static void main(String[] args) {
+        
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.println("INGRESE SU NOMBRE ");
+        String nombre = entrada.nextLine();
+        
+        System.out.println("INGRESE SU NOMBRE ");
+        int edad = entrada.nextInt();
+        
+        Persona persona1 = new Persona(nombre , edad);
+        
+        persona1.mostrarInformacion();
+        
+        
+    }
+}
