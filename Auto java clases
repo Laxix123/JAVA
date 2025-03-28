@@ -1,0 +1,58 @@
+package com.mycompany.autos;
+
+import java.util.Scanner;
+
+public class Autos {
+
+    public static void main(String[] args) {
+        
+        Scanner entrada = new Scanner (System.in);
+        String marca;
+        String modelo;
+        int año;
+        System.out.println("Ingrese la marca del Auto");
+        marca = entrada.nextLine();
+        
+        System.out.println("Ingrese el modelo del Auto");
+        modelo = entrada.nextLine();
+        
+        System.out.println("Ingrese el año del Auto");
+        año = entrada.nextInt();
+        
+        Coche miCoche = new Coche(marca,modelo,año);
+        
+        int opcion;
+        
+        do {
+            System.out.println("\n ---Menú---");
+            System.out.println("[1].- Acelerar");
+            System.out.println("[2].- Frenar");
+            System.out.println("[3].- Mostrar Detalles");
+            System.out.println("[4].- Salir");
+            opcion = entrada.nextInt();
+            
+            switch(opcion){
+                
+                case 1 :
+                    System.out.println("Ingrese cantidad a acelerar en Km/h");
+                    int incremento = entrada.nextInt();
+                    miCoche.Acelerar(incremento);
+                    break;
+                case 2 :
+                    System.out.println("Ingrese cantidad para Frenar en Km/h");
+                    int decremento = entrada.nextInt();
+                    miCoche.Frenar(decremento);
+                    break;
+                case 3 :
+                    miCoche.mostrarDetalles();
+                case 4 :
+                    System.out.println("Saliendo del programa.... . ");
+                    break;
+                default:
+                    System.out.println("Ingrese una opcion valida");
+                    break;
+            }
+        } while (opcion != 4);
+        entrada.close();
+    }
+}
