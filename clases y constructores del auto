@@ -1,0 +1,45 @@
+package com.mycompany.autos;
+
+public class Coche {
+    
+    //ATRIBUTOS del la classe coche
+    
+    private String marca;
+    private String modelo;
+    private int año;
+    private int velocidad;
+    
+    //metodo contructor 
+    public Coche(String marca,String modelo,int año){
+        
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.velocidad = 0;
+    }
+    
+    public void Acelerar(int incremento){
+    
+        velocidad += incremento;
+        System.out.println("El coche aceleró a " + velocidad + "km/h");
+        
+        
+    }
+    
+    public void Frenar(int decremento){
+    
+        velocidad -= decremento;
+        if (velocidad < 0) {
+            velocidad = 0;
+        }
+        System.out.println("El coche Freno a " + velocidad + "km/h"); 
+    }
+    
+    public void mostrarDetalles(){
+        System.out.println("\n --- Detalles del Auto---");
+        System.out.println(" El Marca del Auto es : " + marca);
+        System.out.println(" El Modelo del Auto es : " + modelo);
+        System.out.println(" El Año del Auto es : " + año);
+        System.out.println(" El la Velocidad es : " + velocidad + "Km/h");
+    }
+}
