@@ -1,0 +1,30 @@
+package com.mycompany.banco;
+
+public class CuentaBancaria {
+    
+    private String titular;
+    private float saldo;
+    
+    public CuentaBancaria(String titular, float saldo){
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+    
+    public void Depositar(double cantidad){
+        cantidad += saldo ;
+        System.out.println(" --- Saldo ingresado Exitosamente ---");
+    }
+    public void Retirar(float cantidad){
+        
+        if (saldo > cantidad) {
+            System.out.println("Hay suficiente dinero");
+            cantidad -= saldo;
+        }else{
+            System.out.println("No hay suficiente dinero para el Retiro");   
+        }
+    }
+    public void MostrarSaldo(){
+        
+    }
+    
+}
