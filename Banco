@@ -1,0 +1,77 @@
+package com.mycompany.banco;
+
+import java.util.Scanner;
+
+public class Banco {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner (System.in);
+        String titular = "";
+        float saldo = 0;
+        float saldo_retirado = 0;
+        int op;
+        int opcion ;
+        System.out.println("\n ---- Bienvenido a Banco Estado ---- ");
+        System.out.println("\n-----------------------------------------");
+        System.out.println("Ingrese su rut con el formato -> (**.***.***-*) ");
+        titular = entrada.nextLine();
+        System.out.println("\n-----------------------------------------");
+        
+        CuentaBancaria Cuenta1 = new CuentaBancaria(titular , saldo);
+        do {
+            System.out.println("Seleccione una opción");
+            System.out.println("[1].- Ingresar Dinero ");
+            System.out.println("[2].- Retirar Dinero");
+            System.out.println("[3].- Mostrar saldo");
+            System.out.println("[4].- Salir ");
+            op = entrada.nextInt();
+            switch (op){
+                case 1:
+                    System.out.println(" Ingrese el monto a Ingresar ");
+                    saldo = entrada.nextFloat();
+                    
+                    Cuenta1.Depositar(saldo);
+                    
+                    
+                    System.out.println("\n");
+                    System.out.println("Desea realizar otra Operación");
+                    System.out.println("[1].- Si");
+                    System.out.println("[2].- Ño");
+                    opcion = entrada.nextInt();
+                    if (opcion == 1 ) {
+                        System.out.println(" Bueño");
+                    }else if(opcion == 2){
+                        System.out.println(" nos vemos ");
+                        
+                    }
+                          
+                    break;
+                case 2 :
+                    System.out.println(" Ingrese el monto a Retirar ");
+                    saldo_retirado = entrada.nextFloat();
+                    Cuenta1.Retirar(saldo);
+                    
+                    
+                    System.out.println("\n");
+                    System.out.println("Desea realizar otra Operación");
+                    System.out.println("[1].- Si");
+                    System.out.println("[2].- Ño");
+                    opcion = entrada.nextInt();
+                    if (opcion == 1 ) {
+                        System.out.println(" Bueño");
+                    }else if(opcion == 2){
+                        System.out.println(" nos vemos ");
+                        break;
+                    }
+                    break;
+                case 3:
+                    Cuenta1.MostrarSaldo();
+                    break;
+                case 4 :
+                    System.out.println("Nos vemos Crick . . . ");
+                    break;
+            }  
+        } while (op != 4 );
+        entrada.close();
+    }
+}
